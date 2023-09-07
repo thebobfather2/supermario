@@ -1,5 +1,3 @@
-dist
-*lock.json
 node_modules
 testdb.json
 .vs*
