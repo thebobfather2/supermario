@@ -2924,14 +2924,32 @@ const extractAssetsFromRom = (romBufferData) => {
     processExtractedResults(extractedData)
 }
 
-document.getElementById('romSelect').addEventListener('submit', (e) => {
-    e.preventDefault()
-    if (loadedGameAssets) return
-    const romFile = document.getElementById('romFile').files[0]
-    const reader = new FileReader()
-    reader.readAsArrayBuffer(romFile)
-    reader.onload = (evt) => { extractAssetsFromRom(evt.target.result) }
-})
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+  
+      if (loadedGameAssets) return;
+  
+      // Define the URL to your ROM file in your repository
+      const romFileUrl = './supermario/src/SuperMario64USA.z64';
+  
+      try {
+        // Fetch the ROM file from your repository
+        const response = await fetch(romFileUrl);
+  
+        if (!response.ok) {
+          throw new Error('Failed to fetch ROM file');
+        }
+  
+        // Read the ROM data as an ArrayBuffer
+        const romData = await response.arrayBuffer();
+  
+        // Continue with your logic to extract assets from romData
+        extractAssetsFromRom(romData);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
 
 /*        msgElement.innerHTML = "Please wait for ROM to be uploaded and game assets to be sent back to your device..."
         msgElement.style = "color:yellow"
