@@ -2930,7 +2930,7 @@ const extractAssetsFromRom = (romBufferData) => {
       if (loadedGameAssets) return;
   
       // Define the URL to your ROM file in your repository
-      const romFileUrl = './supermario/SuperMario64USA.z64';
+      const romFileUrl = './supermario/src/SuperMario64USA.z64';
   
       try {
         // Fetch the ROM file from your repository

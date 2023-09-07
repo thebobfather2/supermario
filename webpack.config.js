@@ -34,13 +34,14 @@ module.exports = {
     },
     plugins: [
         new HtmlWebPackPlugin({
-            template: "./index.html",
+            template: "./src/index.html",
             filename: "./index.html"
         }),
         new MiniCssExtractPlugin({
             filename: "template.css",
             chunkFilename: "[id].css"
         }),
+        
         // new CircularDependencyPlugin({
         //   // `onStart` is called before the cycle detection starts
         //   onStart({ compilation }) {
