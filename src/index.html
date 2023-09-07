@@ -35,11 +35,20 @@
             <div id="rom" hidden>
                 <form id="romSelect" class="form-group">
                     <h4 style="color:#fa3e3e">Select US sm64 (z64) ROM File from your computer</h4>
-                    <input id="romFile" class="btn btn-secondary btn-sm" type="file">
+                    <input id="romFile" class="btn btn-secondary btn-sm" type="file" accept=".z64">
                     <input class="btn btn-primary btn-sm" type="submit">
                 </form>
                 <h6 id="romMessage">This project uses the textures and other game assets from the original game. Due to copyright issues, I cannot host those assets on this site. Please select a sm64 ROM to extract those assets before you can play.</h6>
             </div>
+            
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    // Replace the input field value with the desired file name
+                    const romFileInput = document.getElementById("romFile");
+                    romFileInput.value = "Super Mario 64 (USA).z64";
+                });
+            </script>
+            
 
             <div class="container-fluid">
                 <div class="row" style="padding-top: 50px">
