@@ -12,6 +12,13 @@ import {
     G_CC_SHADEFADEA, G_AC_NONE, G_TEXTURE_GEN, G_CC_MODULATERGBFADE, G_CC_DECALFADEA
 } from "../include/gbi"
 
+if (typeof document !== 'undefined') {
+    const canvas = document.querySelector('#gameCanvas');
+    // The rest of your code that depends on the document object
+  } else {
+    console.warn('This code should only run in a browser environment.');
+  }  
+
 const canvas = document.querySelector('#gameCanvas')
 
 export const matrix_identity = [

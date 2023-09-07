@@ -1,10 +1,11 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin")
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const OptimizeCSSAssetsWebpackPlugin = require("optimize-css-assets-webpack-plugin")
-const TerserWebpackPlugin = require("terser-webpack-plugin")
-const CircularDependencyPlugin = require('circular-dependency-plugin')
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCSSAssetsWebpackPlugin = require("optimize-css-assets-webpack-plugin");
+const TerserWebpackPlugin = require("terser-webpack-plugin");
+const CircularDependencyPlugin = require('circular-dependency-plugin');
 
 module.exports = {
+    target: 'web', // Add this line to target the web environment
     module: {
         rules: [
             {
@@ -29,7 +30,7 @@ module.exports = {
         extensions: ['*', '.js']
     },
     devServer: {
-        port:60
+        port: 80
     },
     plugins: [
         new HtmlWebPackPlugin({
@@ -67,4 +68,4 @@ module.exports = {
             new OptimizeCSSAssetsWebpackPlugin({})
         ]
     },
-}
+};
